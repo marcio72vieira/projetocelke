@@ -1,0 +1,16 @@
+{
+    "description": "Marcio Vieira -  Projeto PHP OO (Celke)",
+    "authors": [
+        {
+            "name": "Marcio Vieira",
+            "email": "marcio72vieira@hotmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Core\\": "core",
+            "App\\": "app"
+        }
+    },
+    "require": {}
+}
