@@ -15,6 +15,7 @@ class Home
     public function index(){
         
         //Instanciando e obtendo dados da models
+        //dados['sts_homes'] é só mais um índice criado para o array $dados
         $home = new \App\sts\Models\StsHome();
         $this->dados['sts_homes'] = $home->index();
 

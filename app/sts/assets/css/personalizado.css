@@ -7,7 +7,7 @@ body {
 /* cover: Uma palavra-chave que é o inverso de contain. Ajusta a imagem o mais largamente possível e mantém sua proporção (a imagem não fica esticada). A imagem "cobre" o container inteiro, tanto em altura como em largura. Quando a imagem e o container têm diferentes dimensões,a imagem ultrapassa os limites do container em qualquer direção, para continuar mantendo a proporção. Fonte: https://developer.mozilla.org/pt-BR/docs/Web/CSS/background-size */
 /* Seletor para personalizar o topo da página home */
 .descr-top{
-    background-image: url('../imagem/topo.jpg');
+    /*background-image: url('../imagem/topo.jpg');*/
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
