@@ -18,7 +18,7 @@ $imagem_topo = URL."app/sts/assets/images/home_topo/".$image_top;
 <!-- pode-se colocar a imagem diretamente desta forma, ou utilizando a variável $imagem_topo, como abaixo 
     <div class="jumbotron descr-top" style="background-image: url('<?php //echo URL; ?>app/sts/assets/images/home_topo/topo.jpg')">
 -->
-<div class="jumbotron descr-top" style="background-image: url('<?php echo $imagem_topo; ?>">
+<div class="jumbotron descr-top" style="background-image: url('<?php echo $imagem_topo; ?>')">
     <div class="container text-center">
         <h1 class="display-4"><?php echo $title_top; ?></h1>
         <p class="lead"><?php echo $description_top; ?></p>
@@ -62,4 +62,47 @@ extract($this->dados['sts_homes']['serv']);
         </div>
     </div>
 </div>
+
+
+
+<!-- AÇÃO -->
+<?php 
+//Extraindo os dados retornado da consulta ao banco da tabelea sts_homes_actions a partir do método viewAction() no StsHome
+extract($this->dados['sts_homes']['act']);
+$imagem_action = URL."app/sts/assets/images/home_action/".$image_action;
+?>
+<div class="jumbotron descr-action" style="background-image: url('<?php echo $imagem_action; ?>')">
+    <div class="container text-center">
+        <h4 class="lead mb-4"><?php echo $title_action; ?></h4>
+        <h2 class="display-4 mb-4"><?php echo $subtitle_action; ?></h2>
+        <p class="lead mb-4"><?php echo $description_action; ?></p>
+        <a class="btn btn-primary btn-lg" href="<?php echo $link_btn_action; ?>" role="button"><?php echo $txt_btn_action; ?></a>
+    </div>
+</div>
+
+
+
+<!-- DETALHES -->
+<?php
+//Extraindo os dados retornado da consulta ao banco da tabelea sts_homes_dats a partir do método viewDetails() no StsHome
+extract($this->dados['sts_homes']['det']);
+$imagem_detalhe = URL."app/sts/assets/images/home_detail/".$image_det;
+?>
+<div class="jumbotron descr-det">
+    <div class="container">
+        <h2 class="display-4 text-center titulo"><?php echo $title_det; ?></h2>
+        
+        <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+                <h2 class="featurette-heading"><?php echo $subtitle_det; ?></h2>
+                <p class="lead"><?php echo $description_det; ?></p>
+            </div>
+            
+            <div class="col-md-5 order-md-1">
+                <img src="<?php echo $imagem_detalhe; ?>" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" alt="Detalhes do serviços...">
+            </div>
+        </div>
+    </div>
+</div>
+
 

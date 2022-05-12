@@ -43,7 +43,7 @@ body {
 }
 /* Seletor para personalizar a área da ação da página home */
 .descr-action{
-    background-image: url("../imagem/chamada_acao.jpg");
+    /*background-image: url("../imagem/chamada_acao.jpg");*/
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
