@@ -10,8 +10,8 @@ if(!defined('48b5t9')){
 
 class Contato
 {
-    private $data;              //Recebe os dados que devem ser enviados para a view
-    private $dataForm;          //Recebe os dados vindos do formulário
+    private $data;              //Recebe os dados que devem ser enviados para a view (Dados do formularip e do Endereço de Contato)
+    private $dataForm;          //Recebe os dados vindos do formulário enviado pelo usuário em um primeiro momento
 
     public function index(){
 
@@ -30,6 +30,9 @@ class Contato
                 $this->data['form'] = $this->dataForm;
             }
         }
+
+        $viewContact = new \App\sts\Models\StsContato();
+        $this->data['address'] = $viewContact->view();
 
         //Assim que o usuário chamar este conttroller (direto na URL ou clicando em um link na página)
         //esta parte do código será executada chamando a View. $this->data estará vazia ou é null

@@ -13,6 +13,7 @@ if(!defined('48b5t9')){
 class StsContato
 {
     private array $data;
+    private array $dataContact;                             //Recebe os dados que são retornados do BD
 
     public function create(array $data): bool {
 
@@ -32,7 +33,20 @@ class StsContato
             $_SESSION['msg'] =  "Erro ao enviar Mensagem!";
             return false;
         }
+    }
+
+
+    public function view() {
+        $viewContact =  new \App\sts\Models\helper\StsRead();
+        $viewContact->fullRead("SELECT title_opening_hours, opening_hours, title_address, address, address_two, phone          
+                FROM sts_contacts
+                LIMIT :limit",
+                "limit=1");
         
+        $this->dataContact = $viewContact->getResult();
+
+        return $this->dataContact[0];
 
     }
+
 }
