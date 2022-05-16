@@ -26,28 +26,31 @@ if(isset($this->dados['form'])){
                         unset($_SESSION['msg']);
                     }
                 ?>
-                <form>
+                
+                <!-- action é igual a "", porque vai-se submeter o formulário para a própria página, ou seja, para o próprio controller
+                que chama esta view, assim como todos os outros scripts que envolve a página de contato -->
+                <form method="POST" action="">
                     <div class="form-group">
                         <label for="name">Nome</label>
-                        <input name="name" type="text" class="form-control" id="name" placeholder="Nome completo" required>
+                        <input name="name" type="text" class="form-control" id="name" placeholder="Nome completo" value="<?php if(isset($name)) {echo $name;} ?>" required>
                     </div>
 
                     <div class="form-group">
                         <label for="email">E-mail</label>
-                        <input name="email" type="email" class="form-control" id="email" placeholder="Seu melhor e-mail" required>
+                        <input name="email" type="email" class="form-control" id="email" placeholder="Seu melhor e-mail" value="<?php if(isset($email)) {echo $email;}  ?>" required>
                     </div>
 
                     <div class="form-group">
                         <label for="subject">Assunto</label>
-                        <input name="subject" type="text" class="form-control" id="subject" placeholder="Assunto da mensagem" required>
+                        <input name="subject" type="text" class="form-control" id="subject" placeholder="Assunto da mensagem" value="<?php if(isset($subject)) {echo $subject;}  ?>" required>
                     </div>
 
                     <div class="form-group">
                         <label for="content">Mensagem</label>
-                        <textarea name="content" class="form-control" id="content" rows="3" placeholder="Conteúdo da mensagem" required></textarea>
+                        <textarea name="content" class="form-control" id="content" rows="3" placeholder="Conteúdo da mensagem" required><?php if(isset($content)) {echo $content;} ?></textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <button name="createContMsg"  type="submit" class="btn btn-primary" value="createContMsg">Enviar</button>
                 </form>
             </div>
 
@@ -67,26 +70,3 @@ if(isset($this->dados['form'])){
         </div>
     </div>            
 </div>
-
-
-
-
-
-
-
-
-<!-- action é igual a "", porque vai-se submeter o formulário para a própria página, ou seja, para o próprio controller
-     que chama esta view, assim como todos os outros scripts que envolve a página de contato -->
-<form method="POST" action="">
-    <label>Nome</label>
-    <input name="name" type="text"  placeholder="Nome completo" value="<?php if(isset($name)) {echo $name;} ?>"><br><br>
-    <label>E-mail</label>
-    <input name="email" type="email"placeholder="Seu melhor email" value="<?php if(isset($email)) {echo $email;}  ?>"><br><br>
-    <label>Assunto</label>
-    <input name="subject" type="text" name="subject" placeholder="Assunto da mensagem" value="<?php if(isset($subject)) {echo $subject;}  ?>"><br><br>
-    <label>Mensagem</label>
-    <textarea name="content" rows="6"> <?php if(isset($content)) {echo $name;}  ?></textarea>
-
-    <input name="createContMsg" type="submit" value="Enviar">
-
-</form>

@@ -46,7 +46,7 @@ class StsRead extends StsConn
         $this->select = $query;
 
         if(!empty($parseString)){
-            parse_str($parseString, $this->values);
+            parse_str($parseString, $this->values);     //criará: $values['limit'] = 1; 
         }
 
         $this->exeInstruction();
@@ -69,7 +69,7 @@ class StsRead extends StsConn
     //Obtendo a conexão com o banco e preparando a query, que está no atributo ->select
     private function connection() {
 
-        //A propriedade conn recebe o valor do método connect(), da classe StsConn
+        //A propriedade conn recebe o valor do método connect(), da classe StsConn, pois esta classse extende de StsConn
         $this->conn =  $this->connect();                
 
         //Preparando a query que está no atributo ->select, com a conexaõ(->conn) estabelecida e atribuindo à propriedade ->query
@@ -81,7 +81,9 @@ class StsRead extends StsConn
     }
 
     private function exeParameter() {
+        //Verifca se $this->values, que é um array, possui algum elemento.
         if($this->values) {
+            //Itera sobre o array, resgatando suas chaves ($link) e seus valores ($values)
             foreach($this->values as $link => $value) {
                 if($link == 'limit' || $link == 'offset') {
                     $value = (int) $value;

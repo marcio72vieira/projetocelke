@@ -15,8 +15,8 @@ class Contato
 
     public function index(){
 
-        //dataForm só receberá os dados enviados pelo formulário, se o usuário clicou no botão de submit doo formulário
-        //"createContMsg". Num primeiro momento, $this-dataForm estará vazia ou null
+        //dataForm só receberá os dados enviados pelo formulário se o usuário clicou no botão de submit do formulário
+        //"createContMsg". Em um primeiro momento, $this-dataForm estará vazia ou null
         $this->dataForm = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
         if(!empty($this->dataForm['createContMsg'])){
@@ -31,8 +31,15 @@ class Contato
             }
         }
 
+        //Cria um objeto para carregar as informações de exibição sobre contato, Endereço, telefone, hora de funcionamento etc...
         $viewContact = new \App\sts\Models\StsContato();
         $this->data['address'] = $viewContact->view();
+
+
+        //Instanciando e obtendo os dados da models StsFooter, para recuperar esses dados na view: Views/include/footer.php
+        $viewFooter = new \App\sts\Models\StsFooter();
+        $this->data['footer'] = $viewFooter->view();        
+
 
         //Assim que o usuário chamar este conttroller (direto na URL ou clicando em um link na página)
         //esta parte do código será executada chamando a View. $this->data estará vazia ou é null

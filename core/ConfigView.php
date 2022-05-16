@@ -11,7 +11,7 @@ if(!defined('48b5t9')){
 class ConfigView
 {
     private string $nome;         //Recebe o nome (endereço) da view
-    private $dados;               //Recebe os dados enviados para a view
+    private $dados;               //Recebe os dados dados (sts_homes e footer) a partir do Controller Home.php
 
 
     public function __construct($nome, $dados) {
@@ -24,8 +24,8 @@ class ConfigView
             include 'app/sts/Views/include/head.php';                   //Todo o código do arquivo cabeçalho é incluido aqui
             include 'app/sts/Views/include/menu.php';                   //Todo o código do arquivo menu é incluido aqui
             include 'app/'. $this->nome .'.php';                        //Todo o código da view é incluido aqui, então eu posso utilizar var_dump($this->dados), porque tudo está na mesma página
-            include 'app/sts/Views/include/footer.php';                 //Todo o código do arquivo rodapé é incluido aqui.
-            include 'app/sts/Views/include/librariesJs.php';                 //Todo o código do arquivo rodapé é incluido aqui.
+            include 'app/sts/Views/include/footer.php';                 //Todo o código do arquivo rodapé é incluido aqui. o array $dados['footer'], já está presente nesta página(script). Então na página propriamente dita (footer.php), eu posso recuperar os dados de $dados['footer']
+            include 'app/sts/Views/include/librariesJs.php';            //Todo o código do arquivo rodapé é incluido aqui.
         }else{                                                          //Então, é como se eu tivesse todo o arquivo HTML com scripts PHP dentro deste "if" e consequentemente eu posso utilizar tudo o que estiver dentro desta página, inclusive: var_dump($this->dados)
             die("ERRO Desenvolvimento: Página não encontrada: (". "app/". $this->nome .".php)");
         }

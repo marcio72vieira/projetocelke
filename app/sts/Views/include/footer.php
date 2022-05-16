@@ -3,13 +3,17 @@
 if(!defined('48b5t9')){
     die("Erro: Página não encontrada!");
 }
+
+//Extraindo as informações de $dados['footer'](VINDOS DA ConfigView.php), para colocá-los diretamente nas tag's HTML
+extract($this->dados['footer']);
+
 ?>
 
 <div class="jumbotron footer-per">
     <div class="container">
         <div class="row">
             <div class="col-12 col-sm-12 col-md-4">
-                <h5>Celke</h5>
+                <h5><?php echo $title_site; ?></h5>
                 <ul class="list-unstyled">
                     <li>
                         <a href="<?php echo URL; ?>" class="link-footer">Home</a>
@@ -22,35 +26,36 @@ if(!defined('48b5t9')){
                     </li>
                 </ul>
             </div>
+
             <div class="col-12 col-sm-12 col-md-4">
-                <h5>Contato</h5>
+                <h5><?php echo $title_contact; ?></h5>
                 <ul class="list-unstyled">
                     <ul class="list-unstyled">
                     <li>
-                        <a href="tel: XXXXXXXXXXX" class="link-footer">(XX) XXXXX-XXXX</a>
+                        <a href="tel: <?php echo $phone ; ?>" class="link-footer"><?php echo $phone ; ?></a>
                     </li>
                     <li>
-                        <a href="<?php echo URL; ?>contato" class="link-footer">Av. Winston Churchill</a>
+                        <a href="<?php echo $url_address; ?>" class="link-footer"><?php echo $address ; ?></a>
                     </li>
                     <li>
-                        <a href="<?php echo URL; ?>contato" class="link-footer">CNPJ: XX.XXX.XXX/XXXX-XX</a>
+                        <a href="<?php echo $url_cnpj; ?>" class="link-footer"><?php echo $cnpj ; ?></a>
                     </li>
                 </ul>
             </div>
             <div class="col-12 col-sm-12 col-md-4">
-                <h5>Redes Sociais</h5>
+                <h5><?php echo $title_social_networks; ?></h5>
                 <ul class="list-unstyled">
                     <li>
-                        <a href="https://www.instagram.com/celkecursos" target="_blank" class="link-footer">Instagram</a>
+                        <a href="<?php echo $link_one_social_networks; ?>" target="_blank" class="link-footer"><?php echo $txt_one_social_networks; ?></a>
                     </li>
                     <li>
-                        <a href="https://www.facebook.com/celkecursos/" target="_blank" class="link-footer">Facebook</a>
+                        <a href="<?php echo $link_two_social_networks; ?>" target="_blank" class="link-footer"><?php echo $txt_two_social_networks; ?></a>
                     </li>
                     <li>
-                        <a href="https://www.youtube.com/channel/UC5ClMRHFl8o_MAaO4w7ZYug" target="_blank" class="link-footer">Youtube</a>
+                        <a href="<?php echo $link_three_social_networks; ?>" target="_blank" class="link-footer"><?php echo $txt_three_social_networks; ?></a>
                     </li>
                     <li>
-                        <a href="https://twitter.com/celkecursos" target="_blank" class="link-footer">Twiter</a>
+                        <a href="<?php echo $link_four_social_networks; ?>" target="_blank" class="link-footer"><?php echo $txt_four_social_networks; ?></a>
                     </li>
                 </ul>
             </div>

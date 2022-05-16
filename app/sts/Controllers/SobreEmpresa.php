@@ -17,6 +17,11 @@ class SobreEmpresa
         $list = new \App\sts\Models\StsSobreEmpresa();
         $this->dados['sts_sobres_empresas'] = $list->index();
 
+
+        //Instanciando e obtendo os dados da models StsFooter, para recuperar esses dados na view: Views/include/footer.php
+        $viewFooter = new \App\sts\Models\StsFooter();
+        $this->dados['footer'] = $viewFooter->view();
+
         //Instanciando e enviando dados para a view
         $carregarView = new \Core\ConfigView("sts/Views/sobreEmpresa/sobreEmpresa", $this->dados);
         $carregarView->renderizar();

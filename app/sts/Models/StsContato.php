@@ -27,10 +27,16 @@ class StsContato
         //O resultado, será um número referente ao último ID inserido no banco, ou o valor null. E como sabemos, qualquer
         //número com excecessão do 0 no PHP é considerado verdadeiro.
         if($createContactMsg->getResult()){
-            $_SESSION['msg'] =  "Mensagem enviada com sucesso! {$createContactMsg->getResult()}";
+            $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>
+                                    <strong>SUCESSO!</strong>
+                                    Mesagem enviada com sucesso {$createContactMsg->getResult()} 
+                                </div>";
             return true;
         }else{
-            $_SESSION['msg'] =  "Erro ao enviar Mensagem!";
+            $_SESSION['msg'] =  "<div class='alert alert-danger' role='alert'>
+                                    <strong>ERRO!</strong>
+                                    A mensaagem não foi enviada
+                                </div>";
             return false;
         }
     }
