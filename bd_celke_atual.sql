@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 12-Maio-2022 às 11:11
+-- Tempo de geração: 18-Maio-2022 às 11:18
 -- Versão do servidor: 8.0.23
 -- versão do PHP: 7.4.3
 
@@ -50,6 +50,58 @@ INSERT INTO `artigos` (`id`, `titulo`, `conteudo`, `created`, `modified`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `sts_abouts_companies`
+--
+
+CREATE TABLE `sts_abouts_companies` (
+  `id` int NOT NULL,
+  `title` varchar(220) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(220) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sts_situation_id` int NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Extraindo dados da tabela `sts_abouts_companies`
+--
+
+INSERT INTO `sts_abouts_companies` (`id`, `title`, `description`, `image`, `sts_situation_id`, `created_at`, `updated_at`) VALUES
+(1, 'Sobre empresa título 1', 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable.', 'about_company.jpg', 1, '2022-05-05 08:44:06', NULL),
+(2, 'Sobre empresa título 2', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.', 'about_company.jpg', 1, '2022-05-05 08:44:06', NULL),
+(3, 'Sobre empresa título 3', 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.', 'about_company.jpg', 1, '2022-05-05 08:46:12', NULL),
+(4, 'Sobre empresa título 4', 'Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. ', 'about_company.jpg', 1, '2022-05-05 08:46:12', NULL),
+(5, 'Sobre empresa 5', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'about_company.jpg', 1, '2022-05-13 09:53:51', '2022-05-13 09:53:51');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `sts_contacts`
+--
+
+CREATE TABLE `sts_contacts` (
+  `id` int NOT NULL,
+  `title_opening_hours` varchar(220) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `opening_hours` varchar(220) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title_address` varchar(220) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(220) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address_two` varchar(220) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(44) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Extraindo dados da tabela `sts_contacts`
+--
+
+INSERT INTO `sts_contacts` (`id`, `title_opening_hours`, `opening_hours`, `title_address`, `address`, `address_two`, `phone`, `created_at`, `updated_at`) VALUES
+(1, 'Entre em contato', 'Segunda a Sexta: 08:30 às 12:00 e 13:30 às 18:00', 'Nosso Endereço:', 'Rua Oswaldo Cruz, 1044', 'Centro - São Luis (MA). CEP: 65000-150', '(98) 98702-3344 / (98) 98870-3030', '2022-05-13 10:31:00', '2022-05-13 10:31:00');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `sts_contacts_msgs`
 --
 
@@ -73,7 +125,51 @@ INSERT INTO `sts_contacts_msgs` (`id`, `name`, `email`, `subject`, `content`, `c
 (3, 'Marcio Nonato Fonseca Vieira', 'marcio72vieira@hotmail.com', 'Assunto da Mensagem', ' Marcio Nonato Fonseca Vieira', '2022-05-08 12:56:13', '2022-05-08 12:56:13'),
 (4, 'João Lindoso', 'joao@email', 'Assunto da Mensagem', ' João Lindoso', '2022-05-09 11:18:14', '2022-05-09 11:18:14'),
 (5, 'Sarah Letícia', 'sara@email.com', 'Assuntod da mensagem', 'Conteúdo do assunto da Mensagem ', '2022-05-09 11:36:27', '2022-05-09 11:36:27'),
-(6, 'Marcio Vieira', 'marcio@email.com.br', 'Assunto da Mensagem', ' rerer', '2022-05-10 18:48:45', '2022-05-10 18:48:45');
+(6, 'Marcio Vieira', 'marcio@email.com.br', 'Assunto da Mensagem', ' rerer', '2022-05-10 18:48:45', '2022-05-10 18:48:45'),
+(7, 'Marcio Vieira', 'marcio@email.com.br', 'Assunto da Mensagem', ' Lorem ipsum doloro contente iet', '2022-05-13 10:09:07', '2022-05-13 10:09:07'),
+(8, 'Marcio Vieira', 'marcio@email.com.br', 'Assunto da Mensagem', ' Lorem ipsum doloro contente iet', '2022-05-13 10:12:37', '2022-05-13 10:12:37'),
+(9, 'Marcio Vieira', 'marcio@email.com.br', 'Assunto da Mensagem', ' Lorem ipsum doloro contente iet', '2022-05-13 10:16:32', '2022-05-13 10:16:32'),
+(10, 'JOSE MARIA TRINDADE', 'jose@email.com', 'Lula desiste de sua candidatura a presidência do Brasil', '                                                    TESTE DE MENSAGEM', '2022-05-14 09:28:59', '2022-05-14 09:28:59'),
+(11, 'JOSE MARIA TRINDADE 2', 'jose2@email.com', 'Assunto da Mensagem 2', 'Conteúdo da mensagem 2                                              ', '2022-05-14 09:33:00', '2022-05-14 09:33:00'),
+(12, 'Ester Clévia', 'hafiz@gmail.com', 'Assunto da Mensagem', 'assunyo', '2022-05-14 09:43:48', '2022-05-14 09:43:48'),
+(13, 'Ester Clévia', 'hafiz@gmail.com', 'Assunto da Mensagem', 'assunyo', '2022-05-14 09:47:23', '2022-05-14 09:47:23'),
+(14, 'JOSE MARIA TRINDADE', 'jose@email.com', 'Assunto da Mensagem 2', 'ffdfdf', '2022-05-14 09:53:09', '2022-05-14 09:53:09'),
+(15, 'Sarah Letícia', 'sara@email.com', 'Assuntod da mensagem', 'Texto digitado por Sarah Letícia', '2022-05-14 12:38:12', '2022-05-14 12:38:12');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `sts_footers`
+--
+
+CREATE TABLE `sts_footers` (
+  `id` int NOT NULL,
+  `title_site` varchar(44) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title_contact` varchar(44) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(44) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(120) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `url_address` varchar(220) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cnpj` varchar(44) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `url_cnpj` varchar(110) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title_social_networks` varchar(44) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `txt_one_social_networks` varchar(44) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `link_one_social_networks` varchar(220) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `txt_two_social_networks` varchar(44) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `link_two_social_networks` varchar(220) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `txt_three_social_networks` varchar(44) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `link_three_social_networks` varchar(220) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `txt_four_social_networks` varchar(44) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `link_four_social_networks` varchar(220) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Extraindo dados da tabela `sts_footers`
+--
+
+INSERT INTO `sts_footers` (`id`, `title_site`, `title_contact`, `phone`, `address`, `url_address`, `cnpj`, `url_cnpj`, `title_social_networks`, `txt_one_social_networks`, `link_one_social_networks`, `txt_two_social_networks`, `link_two_social_networks`, `txt_three_social_networks`, `link_three_social_networks`, `txt_four_social_networks`, `link_four_social_networks`, `created_at`, `updated_at`) VALUES
+(1, 'MRCTech', 'Contato', '(98) 98702-3344 / (98) 98870-3030', 'Av. Mario Andreaza, s/n - Calhau. Edifíco Estrela Dalva, sala 1001', 'http://localhost/celke/contato', 'CNPJ: XX.XXX.XXX/XXXX-XX', 'http://localhost/celke/contato', 'Redes Sociais', 'Instagram', 'https://www.instagram.com/celkecursos', 'Facebook', 'https://www.facebook.com/celkecursos/', 'Youtube', 'https://www.youtube.com/channel/UC5ClMRHFl8o_MAaO4w7ZYug', 'Twiter', 'https://twitter.com/celkecursos', '2022-05-14 10:27:38', '2022-05-14 10:27:39');
 
 -- --------------------------------------------------------
 
@@ -177,32 +273,6 @@ CREATE TABLE `sts_homes_tops` (
 INSERT INTO `sts_homes_tops` (`id`, `title_top`, `description_top`, `link_btn_top`, `txt_btn_top`, `image_top`, `created_at`, `updated_at`) VALUES
 (1, 'Temos a solução que a sua empresa precisa!', 'Aenean fermentum sapien sed dolor elementum tincidunt et.', 'http://localhost/celke/contato', 'Contato', 'topo.jpg', '2020-07-23 00:00:00', NULL);
 
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `sts_sobres_empresas`
---
-
-CREATE TABLE `sts_sobres_empresas` (
-  `id` int NOT NULL,
-  `title` varchar(220) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(220) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `sts_situation_id` int NOT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Extraindo dados da tabela `sts_sobres_empresas`
---
-
-INSERT INTO `sts_sobres_empresas` (`id`, `title`, `description`, `image`, `sts_situation_id`, `created_at`, `updated_at`) VALUES
-(1, 'Sobre empresa título 1', 'Decrição Sobre empresa 1', 'image_sobreempresa_01.jpg', 1, '2022-05-05 08:44:06', NULL),
-(2, 'Sobre empresa título 2', 'Descrição Sobre empresa 2', 'image_sobreempresa_02.jpg', 1, '2022-05-05 08:44:06', NULL),
-(3, 'Sobre empresa título 3', 'Descrição Sobre empresa 3', 'image_sobreempresa_03.jpg', 1, '2022-05-05 08:46:12', NULL),
-(4, 'Sobre empresa título ', 'Descricao sobre empresa 04', 'image_sobreempresa_04.jpg', 1, '2022-05-05 08:46:12', NULL);
-
 --
 -- Índices para tabelas despejadas
 --
@@ -214,9 +284,27 @@ ALTER TABLE `artigos`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices para tabela `sts_abouts_companies`
+--
+ALTER TABLE `sts_abouts_companies`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `sts_contacts`
+--
+ALTER TABLE `sts_contacts`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Índices para tabela `sts_contacts_msgs`
 --
 ALTER TABLE `sts_contacts_msgs`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `sts_footers`
+--
+ALTER TABLE `sts_footers`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -244,12 +332,6 @@ ALTER TABLE `sts_homes_tops`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `sts_sobres_empresas`
---
-ALTER TABLE `sts_sobres_empresas`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT de tabelas despejadas
 --
 
@@ -260,10 +342,28 @@ ALTER TABLE `artigos`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT de tabela `sts_abouts_companies`
+--
+ALTER TABLE `sts_abouts_companies`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de tabela `sts_contacts`
+--
+ALTER TABLE `sts_contacts`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT de tabela `sts_contacts_msgs`
 --
 ALTER TABLE `sts_contacts_msgs`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT de tabela `sts_footers`
+--
+ALTER TABLE `sts_footers`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `sts_homes_actions`
@@ -276,12 +376,6 @@ ALTER TABLE `sts_homes_actions`
 --
 ALTER TABLE `sts_homes_dets`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT de tabela `sts_sobres_empresas`
---
-ALTER TABLE `sts_sobres_empresas`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
